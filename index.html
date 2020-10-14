@@ -62,7 +62,7 @@
 
   <script type="module">
     const video = document.getElementById('video');
-    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'enviroment' } }).then(stream => {
       video.srcObject = stream;
       video.play();
     });
