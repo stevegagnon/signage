@@ -6,35 +6,33 @@
   <meta charset="utf-8">
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-    }
-
-    .center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      overflow: hidden;
     }
 
     video {
-      z-index: 1;
-      width: 100%;
-      max-height: 100vh;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
 
     svg {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: fixed;
       z-index: 100;
       fill: rgba(157, 255, 0, 0.3);
-      width: 60%;
+      width: 80%;
     }
   </style>
 </head>
 
 <body>
-  <video class="center" id="video" autoplay></video>
-  <svg class="center" viewBox="0 0 115.2 33.56641">
+
+  <svg viewBox="0 0 115.2 33.56641">
     <g>
       <path
         d="M61.39636,24.85441l-1.34427-1.306-.3356-.326-.33323.32848-.14168.13967c-2.22056,2.18923-4.182,3.08222-6.77011,3.08222a7.92624,7.92624,0,0,1-5.838-2.52553A9.089,9.089,0,0,1,44.25017,17.98v-.06012a9.02825,9.02825,0,0,1,2.35713-6.226,7.91038,7.91038,0,0,1,5.83406-2.50668,8.81164,8.81164,0,0,1,6.62429,2.90637l.14565.14089.34253.33134.33246-.34143,1.4005-1.4383.34383-.35312-.36339-.333-.15447-.14154a11.67678,11.67678,0,0,0-8.64129-3.54768,10.9482,10.9482,0,0,0-8.0366,3.42366A11.76891,11.76891,0,0,0,41.26314,17.98v.06023a11.70333,11.70333,0,0,0,3.1664,8.15161,10.918,10.918,0,0,0,7.98172,3.35741,11.81827,11.81827,0,0,0,8.83991-3.86566l.14786-.14591.34758-.343Z"
@@ -58,7 +56,7 @@
         transform="translate(-0.81349 -1.21679)" />
     </g>
   </svg>
-
+  <video id="video" autoplay></video>
 
   <script type="module">
     const video = document.getElementById('video');
